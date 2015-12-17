@@ -92,14 +92,32 @@
 		<div class="row">
    		<div class="col s10 offset-s1" style="padding-top:65px">
      		<ul class="tabs z-depth-2">
-       		<li class="tab col s2"><a class="active grey-text darken-3" href="#globalhack">Globalhack4</a></li>
+       		<li class="tab col s2"><a class="active grey-text darken-3" href="#hackthearch">HackTheArch</a></li>
+       		<li class="tab col s2"><a class="grey-text darken-3" href="#globalhack">Globalhack4</a></li>
        		<li class="tab col s2"><a class="grey-text darken-3" href="#pitherm">PiTherm</a></li>
        		<li class="tab col s2"><a class="grey-text darken-3" href="#mybudget">MyBudget</a></li>
        		<li class="tab col s2"><a class="grey-text darken-3" href="#ttocui">TTOCUI</a></li>
-       		<li class="tab col s2"><a class="grey-text darken-3" href="#workoutbuddy">WorkoutBuddy</a></li>
+       		<!--<li class="tab col s2"><a class="grey-text darken-3" href="#workoutbuddy">WorkoutBuddy</a></li>-->
      		</ul>
    		</div>
 			<div class="col s10 offset-s1" style="padding-top:15px">
+<!-- HackTheArch -->
+   			<div id="hackthearch" class="col s12 card-panel z-depth-2" style="overflow: auto;max-height:calc( 100vh - 180px)">
+					<p class="col s12 m7">
+	Following the success of the CTF the St. Louis chapter of the MCPA had put on in the Summer of 2015, we decided that we would make it a recurring event.  Unfortunately, the scoring platform that we had used to keep track of team scores did not meet our needs and was cumbersome to work with.  We decided to implement our own scoring server and we decided to name it after our competition, "HackTheArch".
+					<br /> <br />
+	HackTheArch is a responsive Ruby on Rails application with a comprehensive test harness	that gives CTF designers complete control without having to worry about the scoring platform.  We have added a few features we have not seen in other open source scoring platforms and are extremely proud of the result.  HackTheArch implements an optional web-based administration console for creating, changing, and deleting challenges and hints.  We've implemented a dynamic hint system that allows competition designers to optionally provide hints for a configurable number of points to be subtracted either when the problem is solved or when the hint is requested adding a whole new level of complexity to CTF.  Further, the hints can be optionally provided to certain brackets as a type of handicap for less experienced players.  We also implement an optional Stripe payment system so competition designers can collect money securely from competitors for registration.  Finally, we have extensively tested the application for security vulnerabilities with no serious findings.  The project has been published as open source and is available at the St. Louis MCPA <a href="https://github.com/mcpa-stlouis/hack-the-arch">github</a> page.  We also host a live demo at: <a href="https://hackthearch.herokuapp.com">https://hackthearch.herokuapp.com</a>.
+					</p>
+					<div class="col s12 m4 offset-m1" style="padding-top:20px;padding-bottom:20px">
+						<img class="materialboxed z-depth-2" width="100%" src="img/hta-3.png">
+					</div>
+					<div class="col s12" style="padding-top:20px;padding-bottom:20px">
+						<img class="z-depth-2" width="100%" src="img/hta-1.png">
+					</div>
+					<div class="col s12" style="padding-top:20px;padding-bottom:20px">
+						<img class="z-depth-2" width="100%" src="img/hta-2.png">
+					</div>
+				</div>
 <!-- GLOBALHACK -->
    			<div id="globalhack" class="col s12 card-panel z-depth-2" style="overflow: auto;max-height:calc( 100vh - 180px)">
 					<p class="col s12">
@@ -176,6 +194,7 @@ Another problem I faced while developing this application was how to implement t
 					<div class="clearfix" style="padding-bottom:20px"></div>
 				</div>
 <!-- WORKOUTBUDDY -->
+<!--
    			<div id="workoutbuddy" class="col s12 card-panel z-depth-2" style="overflow: auto;max-height:calc( 100vh - 180px)">
 					<p class="col s12">
 Workout Buddy was my senior design project in college.  I used it as an opportunity to learn Objective-C and iOS development.  Workout Buddy was a diet and exercise tracking application for iOS.  It was the first large project I did on my own and serves as a reminder of how far I’ve come.
@@ -191,6 +210,7 @@ This application was (as previously stated) my attempt at learning Objective-C. 
 					</p>
 				</div>
 			</div>
+-->
   	</div>
 	</main>
 
