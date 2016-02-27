@@ -1,1 +1,15 @@
-.*.swp
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+# auto-generated tag files
+tags
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-metadata
