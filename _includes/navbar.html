@@ -1,0 +1,61 @@
+<!--Navbar-->
+<nav class="transparent">
+  <ul id="slide-out" class="side-nav fixed">
+    <div class="indigo darken-4 valign-wrapper">
+      <div class="center-align valign" style="width:100%; margin: 0 auto">
+        <div class="center-align" style="padding-top:10px; margin: 0 auto">
+          <img class="responsive-img circle" width="180px" src="img/profile.jpg">
+          <h5>Paul Jordan</h5>
+        </div>
+        <div class="center-align">
+          <a style="display:inline;padding:2px" class="grey-text lighten-4" href="https://www.linkedin.com/in/paullj1" target="_blank">
+            <i class="small mdi mdi-linkedin-box"></i></a>
+          <a style="display:inline;padding:2px" class="grey-text lighten-4" href="https://plus.google.com/+PaulJordan1" target="_blank">
+            <i class="small mdi mdi-google-plus-box"></i></a>
+          <a style="display:inline;padding:2px" class="grey-text lighten-4" href="https://www.facebook.com/paullj31/" target="_blank">
+            <i class="small mdi mdi-facebook-box"></i></a>
+          <a style="display:inline;padding:2px" class="grey-text lighten-4" href="https://github.com/paullj1/" target="_blank">
+            <i class="small mdi mdi-github-box"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <li {% if page.url contains 'index.html' %}class="active"{% endif %}>
+      <a class="grey-text darken-4" href="index.html">
+        <h4 class="indigo-text darken-3 mdi-social-person" style="display:inline;vertical-align: middle"></h4>
+        <h6 style="display:inline;padding-left:10px;vertical-align: middle"><b>Profile</b></h6>
+      </a>
+    </li>
+    <li {% if page.url contains 'experience.html' %}class="active"{% endif %}>
+      <a class="grey-text darken-4" href="experience.html">
+        <h4 class="deep-orange-text mdi-action-history" style="display:inline;vertical-align: middle"></h4>
+        <h6 style="display:inline;padding-left:10px;vertical-align: middle"><b>Experience</b></h6>
+      </a>
+    </li>
+    <li {% if page.url contains 'projects.html' %}class="active"{% endif %}>
+      <a class="grey-text darken-4" href="projects.html">
+        <h4 class="green-text mdi mdi-television-guide" style="font-size:32px;display:inline;vertical-align: middle"></h4>
+        <h6 style="display:inline;padding-left:10px;vertical-align: middle"><b>Projects</b></h6>
+      </a>
+    </li>
+    <li {% if page.url contains 'skills.html' %}class="active"{% endif %}>
+      <a class="grey-text darken-4" href="skills.html">
+        <h4 class="yellow-text mdi-av-equalizer" style="display:inline;vertical-align: middle"></h4>
+        <h6 style="display:inline;padding-left:10px;vertical-align: middle"><b>Skills</b></h6>
+      </a>
+    </li>
+    <li {% if page.url contains 'publications.html' %}class="active"{% endif %}>
+      <a class="grey-text darken-4" href="publications.html">
+        <h4 class="brown-text lighten-2 mdi-av-my-library-books" style="display:inline;vertical-align: middle"></h4>
+        <h6 style="display:inline;padding-left:10px;vertical-align: middle"><b>Publications</b></h6>
+      </a>
+    </li>
+    <li {% if page.url contains 'about.html' %}class="active"{% endif %}>
+      <a class="grey-text darken-4" href="about.html">
+        <h4 class="pink-text mdi-action-info-outline" style="display:inline;vertical-align: middle"></h4>
+        <h6 style="display:inline;padding-left:10px;vertical-align: middle"><b>About</b></h6>
+      </a>
+    </li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse black-text container"><i class="mdi-navigation-menu"></i></a>
+</nav>

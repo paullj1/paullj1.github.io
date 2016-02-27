@@ -1,0 +1,15 @@
+title: Paul Jordan, Software Engineer
+email: paullj1@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  The purpose of this site is to serve as a public facing web presence to tell
+  you a little about myself and what I do.  Think of it like a digital resume
+  and portfolio.
+baseurl: ""
+url: "https://paullj1.com"
+twitter_username: paullj1
+github_username:  paullj1
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-sitemap
