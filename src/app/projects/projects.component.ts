@@ -200,7 +200,7 @@ This application was (as previously stated) my attempt at learning Objective-C.
 I used the free Stanford iOS development class on iTunes University to learn
 the fundamentals and then got to work.  It stored profile and information about
 consumed foods in flat files locally.  Similar funcationlity is now available
-in the popular MyFitnessPal app.  <a href="files/workoutbuddy.pdf">Here's</a>
+in the popular MyFitnessPal app.  <a href="assets/files/workoutbuddy.pdf">Here's</a>
 the report I wrote on the app. 
       </p>`,
       images: [

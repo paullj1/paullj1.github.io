@@ -1,1 +1,44 @@
-<p>publications works!</p>
+<div fxLayout="column" fxLayoutAlign="center center" class='container'>
+  <div *ngFor="let section of sections" class="pub-category">
+    <h1 [ngStyle]="{'color': section.color}">
+      <mat-icon 
+        matListIcon 
+        class="heading pub-list-icon">{{section.icon}}</mat-icon>
+      {{section.title}}
+    </h1>
+
+    <p>
+      <mat-accordion *ngIf="section.title != 'Magazine Articles'" class="inner-accordion">
+        <mat-expansion-panel *ngFor="let pub of section.publications">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{pub.title}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+            <div *ngIf="pub.authors">
+              <b>Authors</b>: {{ pub.authors }}
+            </div>
+            <div *ngIf="pub.download">
+              <b>Download</b>: <a [href]="pub.download" target="_blank">
+                {{ pub.download }}
+              </a>
+            </div>
+            <blockquote *ngIf="pub.abstract">
+              <b>Abstract</b>
+              <p>{{ pub.abstract }}</p>
+            </blockquote>
+            <div *ngIf="pub.citation">
+              <b>Citation</b>: {{ pub.citation }}
+            </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-list *ngIf="section.title == 'Magazine Articles'">
+        <mat-list-item *ngFor="let pub of section.publications" class='magazine-article'>
+          <img [src]="pub.image" class="article-image" />
+          <a [href]="pub.link" target="_blank">{{pub.title}}</a>
+        </mat-list-item>
+      </mat-list>
+    </p>
+  </div>
+</div>

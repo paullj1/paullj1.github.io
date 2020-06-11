@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
       title: 'Publications'
     }, {
       icon:  'info',
-      color: 'orangered',
+      color: 'lightblue',
       route: "/about",
       title: 'About'
     }];

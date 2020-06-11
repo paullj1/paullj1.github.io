@@ -7,12 +7,35 @@
   height: auto;
 }
 
-.accordion {
+.pub-category {
+  width: 100%;
   max-width: 1000px;
 }
 
-.skill-list-icon {
+mat-expansion-panel {
+  mat-expansion-panel-header {
+    height: auto !important;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+mat-list {
+  mat-list-item {
+    height: auto !important;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+.pub-list-icon {
   padding-right: 1em;
+}
+
+.article-image {
+  width: 50px;
+  padding: 5px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 li {
