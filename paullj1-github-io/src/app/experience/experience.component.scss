@@ -1,0 +1,32 @@
+@import '../../custom-theme.scss';
+
+.container {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  padding: 60px 20px 20px;
+}
+
+.heading {
+  color: mat-color($mat-primary, main);
+}
+
+.exp-list-icon {
+  padding-right: 1em;
+}
+
+li {
+  
+}
+
+/* Temporarily disable animations when transitioning */
+/* https://github.com/angular/components/issues/11765 */
+::ng-deep .ng-animating div mat-accordion mat-expansion-panel div.mat-expansion-panel-header {
+  height: 48px;
+}
+
+::ng-deep .ng-animating div mat-accordion mat-expansion-panel div.mat-expansion-panel-content {
+  height: 0px;
+  visibility: hidden;
+}
+

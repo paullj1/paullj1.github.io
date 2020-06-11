@@ -1,0 +1,86 @@
+<div class='container'>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="heading">
+          <mat-icon 
+            matListIcon 
+            class="heading exp-list-icon">school</mat-icon>
+          Education
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <ul>
+        <li *ngFor="let edu of education">
+          <a target="_blank" href="{{edu.link}}">{{edu.institution}}</a>,
+          {{edu.location}}
+          {{edu.degree}},
+          ({{edu.year}})
+          <span *ngIf="edu.gpa">- Cumulative GPA: {{edu.gpa}}</span>
+        </li>
+      </ul>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="heading">
+          <mat-icon 
+            matListIcon 
+            class="heading exp-list-icon">domain</mat-icon>
+          Work Experience
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let work of work_experience">
+        <b>
+          <span>
+            <a *ngIf="work.org_link; else noLink" 
+                target="_blank"
+                href="{{work.org_link}}">
+              {{work.org}},
+            </a>
+            <ng-template #noLink>{{work.org}}</ng-template>
+            {{work.location}}
+            ({{work.dates}});
+            {{work.title}}
+          </span>
+        </b>
+        <ul>
+          <li *ngFor="let bullet of work.bullets">{{bullet}}</li>
+        </ul>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="heading">
+          <mat-icon 
+            matListIcon 
+            class="heading exp-list-icon">public</mat-icon>
+          Volunteer Experience
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let work of volunteer_experience">
+        <b>
+          <span>
+            <a *ngIf="work.org_link; else noLink" 
+                target="_blank"
+                href="{{work.org_link}}">
+              {{work.org}},
+            </a>
+            <ng-template #noLink>{{work.org}},</ng-template>
+            {{work.location}}
+            ({{work.dates}});
+            {{work.title}}
+          </span>
+        </b>
+        <ul>
+          <li *ngFor="let bullet of work.bullets">{{bullet}}</li>
+        </ul>
+      </div>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>

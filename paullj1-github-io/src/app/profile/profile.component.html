@@ -1,0 +1,19 @@
+<div class='container'>
+  <h1 class='heading'>Paul<b>Jordan</b></h1>
+  <h2 class='heading'>Software Engineer / Hacker / DevOps Hobbyist</h2>
+  <blockquote>
+   <mat-nav-list> 
+      <a *ngFor="let link of contact_links"
+          matListItem
+          target="_blank"
+          [href]="link.href"
+          class='contact-list-text'>
+        <mat-icon 
+          matListIcon 
+          class="contact-list-icon">{{link.icon}}</mat-icon>
+        {{link.text}}
+      </a>
+    </mat-nav-list>
+    
+  </blockquote>
+</div>

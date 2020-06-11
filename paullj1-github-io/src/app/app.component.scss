@@ -1,0 +1,63 @@
+@import '../custom-theme.scss';
+
+.navbutton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+}
+
+.list-item-active {
+  color: mat-color($mat-accent) !important;
+  background-color: mat-color($mat-accent, lighter) !important;
+}
+
+.profile-pic {
+  width: 150px;
+  padding: 5px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.sm-link-bar {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  padding-bottom: 10px;
+}
+.sm-links {
+  font-size: 1.5em;
+  color: mat-color($mat-accent, main);
+  display: inline-block;
+  padding: 1px;
+}
+
+.nav-heading {
+  padding: 0px;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+  color: mat-color($mat-primary, lighter);
+  background-color: mat-color($mat-primary, darker);
+}
+
+.background {
+  background: url(../assets/img/bg.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  position: absolute;
+  display: flex;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
