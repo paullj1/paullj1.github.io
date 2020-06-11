@@ -1,1 +1,20 @@
-<p>skills works!</p>
+<div fxLayout="row" fxLayoutAlign="center center" class='container'>
+  <mat-accordion class="accordion">
+    <mat-expansion-panel *ngFor="let section of sections">
+      <mat-expansion-panel-header>
+        <mat-panel-title [ngStyle]="{'color': section.color }">
+          <mat-icon 
+            matListIcon 
+            class="heading exp-list-icon">{{section.icon}}</mat-icon>
+          {{section.title}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <ul>
+        <li *ngFor="let bullet of section.bullets">
+          {{bullet}}
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

@@ -10,17 +10,17 @@ import {
 
 const slideUp = [
      query(':enter, :leave', 
-          style({ position: 'fixed',  height: '100%' }), 
+          style({ position: 'absolute',  height: '100%', width: '100%'}), 
           { optional: true }),
      group([
           query(':enter', [
               style({ transform: 'translateY(100%)' }), 
-              animate('0.25s ease-in-out', 
+              animate('0.25s ease-out', 
               style({ transform: 'translateY(0%)' }))
           ], { optional: true }),
           query(':leave', [
               style({ transform: 'translateY(0%)' }),
-              animate('0.25s ease-in-out', 
+              animate('0.25s ease-out', 
               style({ transform: 'translateY(-100%)' }))
               ], { optional: true }),
       ])
@@ -28,17 +28,17 @@ const slideUp = [
 
 const slideDown = [
      query(':enter, :leave', 
-          style({ position: 'fixed', height: '100%' }), 
+          style({ position: 'absolute', height: '100%', width: '100%'}), 
           { optional: true }),        
      group([
           query(':enter',[
               style({ transform: 'translateY(-100%)' }),
-              animate('0.25s ease-in-out', 
+              animate('0.25s ease-out', 
               style({ transform: 'translateY(0%)' }))
           ], { optional: true }),
           query(':leave', [
               style({ transform:   'translateY(0%)'}),
-              animate('0.25s ease-in-out', 
+              animate('0.25s ease-out', 
               style({ transform: 'translateY(100%)' }))
           ], { optional: true }),
      ])

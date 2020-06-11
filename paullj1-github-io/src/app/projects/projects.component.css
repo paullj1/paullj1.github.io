@@ -1,8 +1,14 @@
 
 .container {
-  margin: 60px 30px 30px;
-  background: white;
+  width: 80%;
+  padding: 60px 20px 20px;
   z-index: 10;
+}
+
+.tab-group {
+  margin: auto;
+  background: white;
+  max-width: 1000px;
 }
 
 .tab-content {

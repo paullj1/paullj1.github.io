@@ -1,15 +1,19 @@
-<div class='container'>
-  <mat-tab-group mat-stretch-tabs class="mat-elevation-z4">
-    <mat-tab *ngFor="let project of projects"
-        label="{{project.title}}">
-      <div class="tab-content">
-        <div [innerHTML]="this.bypass(project.content)"></div>
-        <h2 *ngIf="project.images">Images</h2>
-        <img *ngFor="let image of project.images" 
-          class="thumb"
-          src="assets/img/{{image}}"
-          (click)="openPopup(image)"/>
-      </div>
-    </mat-tab>
-  </mat-tab-group>
+<div fxLayout="row" fxLayoutAlign="center top">
+  <div class='container'>
+    <mat-tab-group mat-stretch-tabs class="tab-group mat-elevation-z4">
+      <mat-tab *ngFor="let project of projects"
+          label="{{project.title}}">
+        <div class="tab-content">
+          <div [innerHTML]="this.bypass(project.content)"></div>
+          <h2 *ngIf="project.images">Images</h2>
+          <div fxLayout="row" fxLayout="space-between center">
+            <img *ngFor="let image of project.images" 
+              class="thumb"
+              src="assets/img/{{image}}"
+              (click)="openPopup(image)"/>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

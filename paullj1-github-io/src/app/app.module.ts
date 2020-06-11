@@ -1,6 +1,7 @@
 // Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Material Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +13,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 // Custom Components
 import { AppRoutingModule } from './app-routing.module';
@@ -26,8 +28,7 @@ import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProfileComponent,
+    AppComponent, ProfileComponent,
     ExperienceComponent,
     SkillsComponent,
     PublicationsComponent,
@@ -37,6 +38,7 @@ import { ProjectsComponent } from './projects/projects.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatDividerModule,
@@ -46,6 +48,7 @@ import { ProjectsComponent } from './projects/projects.component';
     MatButtonModule,
     MatTabsModule,
     MatDialogModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
