@@ -54,8 +54,8 @@
   -o-background-size: cover;
   background-size: cover;
 
-  position: absolute;
-  display: flex;
+  z-index: -1;
+  position: fixed;
   top: 0;
   height: 100%;
   width: 100%;

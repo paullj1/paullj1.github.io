@@ -10,6 +10,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Custom Components
 import { AppRoutingModule } from './app-routing.module';
@@ -42,6 +44,8 @@ import { ProjectsComponent } from './projects/projects.component';
     MatIconModule,
     MatExpansionModule,
     MatButtonModule,
+    MatTabsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

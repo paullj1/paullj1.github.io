@@ -12,6 +12,7 @@ import { slideInAnimation } from './route-animations';
 })
 export class AppComponent implements OnInit {
 
+  title = "Paul Jordan - Software Engineer"
   links = [
     {
       icon:  'person',
