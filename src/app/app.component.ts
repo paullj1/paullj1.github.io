@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { slideInAnimation } from './route-animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -103,6 +104,13 @@ export class AppComponent implements OnInit {
     this.navmode = "side";
   }
 
+  constructor(private router: Router) {
+    let path = localStorage.getItem('path');
+    if (path) {
+      localStorage.removeItem('path');
+      this.router.navigate([path]);
+    }
+  }
 
   ngOnInit() {
     if (localStorage.getItem('dark_mode')) {
