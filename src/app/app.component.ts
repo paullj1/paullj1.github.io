@@ -13,6 +13,9 @@ import { slideInAnimation } from './route-animations';
 export class AppComponent implements OnInit {
 
   title = "Paul Jordan - Software Engineer"
+	dark_mode: boolean;
+	dark_mode_checked: boolean;
+
   links = [
     {
       icon:  'person',
@@ -65,6 +68,17 @@ export class AppComponent implements OnInit {
     }
   }
 
+  theme_toggle() {
+		this.dark_mode = !this.dark_mode;
+		if (this.dark_mode) {
+			localStorage.setItem('dark_mode', 'on');
+			localStorage.removeItem('light_mode');
+		} else {
+			localStorage.setItem('light_mode', 'on');
+			localStorage.removeItem('dark_mode');
+		}
+  }
+
   private onResize(event) {
     if (event.target.innerWidth > 600 && this.mobile) {
       this.makeDesktop();
@@ -91,6 +105,17 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
+    if (localStorage.getItem('dark_mode')) {
+      this.dark_mode = true;
+    } else if (localStorage.getItem('light_mode')) {
+      this.dark_mode = false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      this.dark_mode = true;
+    } else {
+      this.dark_mode = false;
+    }
+    this.dark_mode_checked = this.dark_mode;
+
     if (window.innerWidth <= 600) {
       this.makeMobile();
     } else {

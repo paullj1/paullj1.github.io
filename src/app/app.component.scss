@@ -13,7 +13,6 @@
 }
 
 .list-item-active {
-  color: mat-color($mat-accent) !important;
   background-color: mat-color($mat-accent, lighter) !important;
 }
 
@@ -47,6 +46,14 @@
   background-color: mat-color($mat-primary, darker);
 }
 
+.theme-alternate .list-item-active {
+  background-color: mat-color($mat-accent, darker) !important;
+}
+
+.nav-list {
+  margin-bottom: 60px;
+}
+
 .background {
   background: url(../assets/img/bg.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -59,5 +66,31 @@
   top: 0;
   height: 100%;
   width: 100%;
+}
+
+.light-mode-label {
+	vertical-align: top;
+  line-height: 24px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark-mode-switch {
+  position: absolute;
+  height: 50px;
+  display: block;
+  float: left;
+  bottom: 0px;
+  width: 100%;
+  padding-top: 10px;
+  background-color: mat-color($mat-accent, lighter);
+}
+
+.theme-alternate .dark-mode-switch {
+  background-color: mat-color($mat-accent, darker);
+}
+
+.theme-alternate .background {
+  filter: invert(100%);
 }
 

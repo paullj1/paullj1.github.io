@@ -248,3 +248,41 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
   }
 }
 
+.mat-primary {
+  color: mat-color($mat-primary, main);
+}
+
+/* Temporarily disable animations when transitioning */
+/* https://github.com/angular/components/issues/11765 */
+::ng-deep .ng-animating div mat-accordion mat-expansion-panel div.mat-expansion-panel-header {
+  height: 48px;
+}
+
+::ng-deep .ng-animating div mat-accordion mat-expansion-panel div.mat-expansion-panel-content {
+  height: 0px;
+  visibility: hidden;
+}
+
+::ng-deep a:link {
+  color: $dark-accent-text;
+}
+
+::ng-deep a:visited {
+  color: $dark-accent-text;
+}
+
+::ng-deep a:hover {
+  color: $dark-focused;
+}
+
+::ng-deep .theme-alternate a:link {
+  color: $light-accent-text;
+}
+
+::ng-deep .theme-alternate a:visited {
+  color: $light-accent-text;
+}
+
+::ng-deep .theme-alternate a:hover {
+  color: $light-focused;
+}

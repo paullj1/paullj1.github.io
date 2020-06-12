@@ -1,5 +1,8 @@
-
-<mat-sidenav-container autosize fxLayout="column" class='app-container'>
+<mat-sidenav-container
+      autosize
+      fxLayout="column"
+      [ngClass]="this.dark_mode ? 'theme-alternate' : ''"
+      class='app-container'>
   <mat-sidenav [(mode)]="navmode" [(opened)]="navopen" class='nav-bar'>
     <div class='nav-heading'>
       <img src="assets/img/profile.jpg" class='profile-pic' />
@@ -15,7 +18,7 @@
       </span>
     </div>
 
-    <mat-nav-list>
+    <mat-nav-list class='nav-list'>
       <a *ngFor="let link of links"
           mat-list-item
           routerLinkActive
@@ -31,6 +34,18 @@
         {{link.title}}
       </a>
     </mat-nav-list>
+    <div fxLayout="column"
+        fxLayoutAlign="center center"
+        class="dark-mode-switch mat-list-item-content">
+      <span style='text-center'>
+        <mat-icon class='light-mode-label'>wb_sunny</mat-icon>
+        <mat-slide-toggle
+					[checked]="dark_mode_checked"
+					(change)="theme_toggle()">
+					<mat-icon>bedtime</mat-icon>
+				</mat-slide-toggle>
+      </span>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
 

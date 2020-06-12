@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 // Custom Components
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +50,7 @@ import { ProjectsComponent } from './projects/projects.component';
     MatTabsModule,
     MatDialogModule,
     MatCardModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

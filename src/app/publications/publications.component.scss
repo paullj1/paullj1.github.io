@@ -1,4 +1,3 @@
-@import '../../custom-theme.scss';
 
 .container {
   width: 80%;
@@ -40,16 +39,5 @@ mat-list {
 
 li {
   
-}
-
-/* Temporarily disable animations when transitioning */
-/* https://github.com/angular/components/issues/11765 */
-::ng-deep .ng-animating div mat-accordion mat-expansion-panel div.mat-expansion-panel-header {
-  height: 48px;
-}
-
-::ng-deep .ng-animating div mat-accordion mat-expansion-panel div.mat-expansion-panel-content {
-  height: 0px;
-  visibility: hidden;
 }
 
