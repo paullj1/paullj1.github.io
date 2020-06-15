@@ -1,7 +1,7 @@
 <mat-sidenav-container
       autosize
       fxLayout="column"
-      [ngClass]="this.dark_mode ? 'theme-alternate' : ''"
+      [class.theme-alternate]="this.dark_mode"
       class='app-container'>
   <mat-sidenav [(mode)]="navmode" [(opened)]="navopen" class='nav-bar'>
     <div class='nav-heading'>
@@ -40,8 +40,8 @@
       <span style='text-center'>
         <mat-icon class='light-mode-label'>wb_sunny</mat-icon>
         <mat-slide-toggle
-					[checked]="dark_mode_checked"
-					(change)="theme_toggle()">
+					[checked]="dark_mode"
+					(change)="theme_toggle($event)">
 					<mat-icon>bedtime</mat-icon>
 				</mat-slide-toggle>
       </span>

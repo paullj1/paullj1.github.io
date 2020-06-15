@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
 
   title = "Paul Jordan - Software Engineer"
 	dark_mode: boolean;
-	dark_mode_checked: boolean;
 
   links = [
     {
@@ -69,8 +68,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  theme_toggle() {
-		this.dark_mode = !this.dark_mode;
+  theme_toggle(data) {
+		this.dark_mode = data.checked
 		if (this.dark_mode) {
 			localStorage.setItem('dark_mode', 'on');
 			localStorage.removeItem('light_mode');
@@ -122,7 +121,6 @@ export class AppComponent implements OnInit {
     } else {
       this.dark_mode = false;
     }
-    this.dark_mode_checked = this.dark_mode;
 
     if (window.innerWidth <= 600) {
       this.makeMobile();
