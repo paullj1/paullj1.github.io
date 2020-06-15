@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "paullj1-github-io"
+  "defaultProject": "paullj1-github-io",
+  "cli": {
+    "analytics": "0d5435b6-2a98-4cb6-b654-fd7b73cce0ea"
+  }
 }
