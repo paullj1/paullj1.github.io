@@ -107,6 +107,18 @@
             ]
           }
         },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "cname": "paullj1.com",
+            "baseHref": "/",
+            "repo": "https://github.com/paullj1/paullj1.github.io.git",
+            "name": "Paul Jordan",
+            "email": "paullj1@gmail.com",
+            "branch": "master",
+            "message": "ng deploy autocommit"
+          }
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
