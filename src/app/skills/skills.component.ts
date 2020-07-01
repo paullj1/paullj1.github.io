@@ -75,6 +75,7 @@ export class SkillsComponent implements OnInit {
       icon: "edit",
       color: "purple",
       bullets: [
+        "Offensive Security Certified Professional (OSCP); 2020 - Present",
         "Certified Information System Security Professional (CISSP); 2014 - Present, Member Number: 482166",
         "GIAC Certified Incident Handler (GCIH); 2013 - 2017",
         "CompTIA Security+; 2012 - 2015",
