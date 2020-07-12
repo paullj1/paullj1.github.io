@@ -12,7 +12,10 @@
 
       <ul>
         <li *ngFor="let bullet of section.bullets">
-          {{bullet}}
+          <a *ngIf="bullet.url; else elseBlock" target="_blank" [href]="bullet.url">{{bullet.text}}</a>
+          <ng-template #elseBlock>
+            {{bullet}}
+          </ng-template>
         </li>
       </ul>
     </mat-expansion-panel>
