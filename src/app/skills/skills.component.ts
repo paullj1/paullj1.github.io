@@ -15,12 +15,12 @@ export class SkillsComponent implements OnInit {
       bullets: [
         "Proficiency using compiled languages including C, C++, Java, C#, Objective C, swift, Go, and Rust",
         "Proficiency in application scripting including Python, bash, ruby",
-        "Experience using and reversing Assembly (Atmel, x86, x86_64, and ARM)",
+        "Experience using and reversing Assembly (Atmel, Xtensa, x86, x86_64, and ARM)",
         "Experience using advanced deep learning techniques in Matlab, R, and Python",
         "Experience training and using deep learning algorithms like RNNs/LSTMs, ANNs, SVMs, LDA/QDA",
         "Experience using software engineering tools and methodologies including UML, Scrum, SVN, Git",
         "Working level knowledge of User Interface frameworks like Qt and GTK+",
-        "Familiarity with regular expressions, parsers, compilers, database design, SQL, NoSQL",
+        "Experience with regular expressions, parsers, compilers, database design, SQL, NoSQL",
       ]
     },
     {
@@ -29,7 +29,7 @@ export class SkillsComponent implements OnInit {
       color: "orange",
       bullets: [
         "Proficiency building, maintaining, and deploying Docker containers for production, development, and testing",
-        "Proficiency deploying and maintaining production systems using with Docker Swarm, and Portainer",
+        "Proficiency deploying and maintaining production systems with Docker Swarm, and Portainer",
         "Experience with CI/CD pipelines using Jenkins, and Gitlab-CI",
         "Familiarity deploying and maintaining Kubernetes clusters",
       ]
@@ -41,7 +41,7 @@ export class SkillsComponent implements OnInit {
       bullets: [
         "Proficiency with web technologies including HTML5, CSS/SCSS, JavaScript/TypeScript/ES6, jQuery, extJS, XML",
         "Experience using front-end web frameworks like angular, vueJS, ReactJS",
-        "Working level knowledge using backend databases such as MySQL, MongoDB, Postrgres, and sqlite",
+        "Proficiency using backend databases such as MySQL, MongoDB, Postrgres, and sqlite",
         "Experience with web application framework development using Django, Tornado, Flask, Ruby on Rails, Node.js",
         "Experience using various CSS frameworks like Materialize CSS, Bootstrap",
       ]
