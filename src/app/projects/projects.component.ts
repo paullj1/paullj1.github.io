@@ -124,6 +124,7 @@ Fortunately, I knew a lot of the features I wanted to support after having used 
               </tr>
             </table>
           </li>
+        </ul>
         <p>
 When it was done, I published the code, and associated complied firmware images
 on a <a href='https://github.com/paullj1/TreatLife-HomeKit'
