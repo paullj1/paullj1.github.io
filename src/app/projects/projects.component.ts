@@ -22,6 +22,128 @@ export class ProjectsComponent implements OnInit {
 //    ]
 //  },
     {
+      title: "TreatLife HomeKit",
+      content: `<p>
+After moving to Maryland, I decided it was time to go all-in on the smart home.
+I had previously played around with using <a href='https://homebridge.io'
+target="_blank">Homebridge</a> to enable Apple HomeKit for non-HomeKit devices,
+but did not feel like maintaining the service in perpetuity.  So I started doing
+some research on types of devices that can support HomeKit out of the box when I
+discovered the <a href='https://www.espressif.com/en/products/socs/esp8266'
+target='_blank'>ESP 8266</a>.  The MCU had been used in a wide array of cheap
+devices, and the open source community had created a few open source options for
+the hardware.  It turned out that I had unknowingly purchased a few of light
+switches with the hardware when I was using HomeBridge.  So I cracked them open
+and flashed them with the <a
+href='https://github.com/RavenSystem/esp-homekit-devices'
+target='_blank'>HomeKit Accessory Architect (HAA)</a> firmware.
+        </p>
+        <p>
+Unfortunately, I had a better use-case for switches that offered dimming
+capability than simple a relay, and there wasn't a clean way to support the
+majority of smart switches on the market with HAA.  These switches typically
+used the ESP 8266 as a WiFi bridge to a smaller MCU that actually controlled the
+TRIAC dimming circuit.  They used the ESP 8266 UART interface to send and
+receive updates to the state of the light.  So I decided to use the <a
+href='https://www.treatlife.tech' target='_blank'>TreatLife</a> series of dimmer
+switches.  They were highly rated on Amazon, and all of their dimmers appeared
+to use the ESP 8266 MCU.  The ESP 8266 communicated with the secondary MCUsusing
+a <a href='https://www.tuya.com' target='_blank'>Tuya</a> protocol over UART.
+Fortunately, the <a href='https://tasmota.github.io/docs/'
+target='_blank'>Tasmota</a> project had done a decent job of documenting the
+protocol, but they didn't seem like a great place to implement HomeKit support,
+so I set out to write my own firmware.
+        </p>
+        <p>
+Fortunately, I knew a lot of the features I wanted to support after having used Tasmota, and HAA.  I wanted the ability to do over-the-air updates, and dynamic WiFi config.  For both of those features, I started with the <a href='https://www.arduino.cc/reference/en/libraries/wifimanager/' target='_blank'>Arduino WiFi Manager</a> library, and then added the HomeKit support using the <a href='https://www.arduino.cc/reference/en/libraries/homekit-esp8266/' target='_blank'>HomeKit ESP8266</a> library.  The last thing to do was to reverse which messages controlled the various functions of the dimmer switch.  For this, I used Tasmota, and the <a href='https://github.com/sillyfrog/Tasmota-Tuya-Helper' target='_blank'>Tasmota Tuya Helper</a> bookmarklet.  The four devices the firmware my firmware supports are:
+        </p>
+        <table>
+          <tr>
+            <th>Device</th>
+            <th>DpID Mapping</th>
+          </tr>
+          <tr>
+            <td><a href='https://smile.amazon.com/dp/B07PJTLB7Z' target='_blank'>DS01C Touch Dimmer</a>, <a href='https://smile.amazon.com/dp/B07YKFSWJN' target='_blank'>DS02C Dimmer Switch</a>, and the <a href='https://smile.amazon.com/dp/B08R89VNMV' target='_blank'>DS02 Three-Way Dimmer Switch</a></td>
+            <td>
+              <table>
+                <tr>
+                  <th>DpID</th>
+                  <th>Function</th>
+                </tr>
+                <tr>
+                  <td>0x01</td>
+                  <td>Toggle Light on/off</td>
+                </tr>
+                <tr>
+                  <td>0x02</td>
+                  <td>Brightness value 0-1000</td>
+                </tr>
+                <tr>
+                  <td>0x03</td>
+                  <td>Minimum dimmer value 10-1000 (which scales the range on the physical switch)</td>
+                </tr>
+                <tr>
+                  <td>0x04</td>
+                  <td>Dimming type used for different bulb styles</td>
+                </tr>
+                <tr>
+                  <td>0x66</td>
+                  <td>Timer in minutes which when set, will count down to zero before turning off the light</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+            <td><a href='https://smile.amazon.com/dp/B086PPRWL7' target='_blank'>DS03 Dimmer & Fan Control</a></td>
+            <td>
+              <table>
+                <tr>
+                  <th>DpID</th>
+                  <th>Function</th>
+                </tr>
+                <tr>
+                  <td>0x01</td>
+                  <td>Toggle fan on/off</td>
+                </tr>
+                <tr>
+                  <td>0x03</td>
+                  <td>Fan speed (0, 1, 2, or 3)</td>
+                </tr>
+                <tr>
+                  <td>0x09</td>
+                  <td>Toggle light on/off</td>
+                </tr>
+                <tr>
+                  <td>0x0a</td>
+                  <td>Brightness value (0-1000)</td>
+                </tr>
+                <tr>
+                  <td>0x65</td>
+                  <td>Timer in minutes which when set, will count down to zero before turning off the fan</td>
+                </tr>
+                <tr>
+                  <td>0x67</td>
+                  <td>Timer in minutes which when set, will count down to zero before turning off the light</td>
+                </tr>
+                <tr>
+                  <td>0x6a</td>
+                  <td>Minimum dimmer value 10-1000 (which scales the range on the physical switch)</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <p>
+When it was done, I published the code, and associated complied firmware images
+on a <a href='https://github.com/paullj1/TreatLife-HomeKit'
+target='_blank'>project GitHub</a> page, with a simple GitHub Pages branch
+hosted at <a
+href='https://paullj1.com/TreatLife-HomeKit/'>paullj1.com/TreatLife-HomeKit</a>.
+        </p>
+      `,
+      images: [
+      ]
+    },
+    {
       title: "HackTheArch",
       content: `<p>
 Following the success of the CTF the St. Louis chapter of the MCPA had put on
