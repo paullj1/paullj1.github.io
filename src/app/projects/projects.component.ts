@@ -265,6 +265,10 @@ It’s a sqlite database with a web-based user interface.  The front end is
 written using jQuery mobile with a PHP backend to interact with the database.
 I did build a little php authentication mechanism for this which I know isn’t
 bulletproof, but it has stopped all of the automated attacks (so far).
+      </p><p>
+In 2016, I re-wrote the basic PHP/jquery application as a Ruby on Rails app.  I
+host it locally today, and it's open for anyone else to use at <a
+href='https://budget.paullj1.com/' target='_blank'>budget.paullj1.com</a>.
       </p>`,
       images: [
         "budget.png"
