@@ -57,90 +57,83 @@ so I set out to write my own firmware.
         <p>
 Fortunately, I knew a lot of the features I wanted to support after having used Tasmota, and HAA.  I wanted the ability to do over-the-air updates, and dynamic WiFi config.  For both of those features, I started with the <a href='https://www.arduino.cc/reference/en/libraries/wifimanager/' target='_blank'>Arduino WiFi Manager</a> library, and then added the HomeKit support using the <a href='https://www.arduino.cc/reference/en/libraries/homekit-esp8266/' target='_blank'>HomeKit ESP8266</a> library.  The last thing to do was to reverse which messages controlled the various functions of the dimmer switch.  For this, I used Tasmota, and the <a href='https://github.com/sillyfrog/Tasmota-Tuya-Helper' target='_blank'>Tasmota Tuya Helper</a> bookmarklet.  The four devices the firmware my firmware supports are:
         </p>
-        <table>
-          <tr>
-            <th>Device</th>
-            <th>DpID Mapping</th>
-          </tr>
-          <tr>
-            <td><a href='https://smile.amazon.com/dp/B07PJTLB7Z' target='_blank'>DS01C Touch Dimmer</a>, <a href='https://smile.amazon.com/dp/B07YKFSWJN' target='_blank'>DS02C Dimmer Switch</a>, and the <a href='https://smile.amazon.com/dp/B08R89VNMV' target='_blank'>DS02 Three-Way Dimmer Switch</a></td>
-            <td>
-              <table>
-                <tr>
-                  <th>DpID</th>
-                  <th>Function</th>
-                </tr>
-                <tr>
-                  <td>0x01</td>
-                  <td>Toggle Light on/off</td>
-                </tr>
-                <tr>
-                  <td>0x02</td>
-                  <td>Brightness value 0-1000</td>
-                </tr>
-                <tr>
-                  <td>0x03</td>
-                  <td>Minimum dimmer value 10-1000 (which scales the range on the physical switch)</td>
-                </tr>
-                <tr>
-                  <td>0x04</td>
-                  <td>Dimming type used for different bulb styles</td>
-                </tr>
-                <tr>
-                  <td>0x66</td>
-                  <td>Timer in minutes which when set, will count down to zero before turning off the light</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-            <td><a href='https://smile.amazon.com/dp/B086PPRWL7' target='_blank'>DS03 Dimmer & Fan Control</a></td>
-            <td>
-              <table>
-                <tr>
-                  <th>DpID</th>
-                  <th>Function</th>
-                </tr>
-                <tr>
-                  <td>0x01</td>
-                  <td>Toggle fan on/off</td>
-                </tr>
-                <tr>
-                  <td>0x03</td>
-                  <td>Fan speed (0, 1, 2, or 3)</td>
-                </tr>
-                <tr>
-                  <td>0x09</td>
-                  <td>Toggle light on/off</td>
-                </tr>
-                <tr>
-                  <td>0x0a</td>
-                  <td>Brightness value (0-1000)</td>
-                </tr>
-                <tr>
-                  <td>0x65</td>
-                  <td>Timer in minutes which when set, will count down to zero before turning off the fan</td>
-                </tr>
-                <tr>
-                  <td>0x67</td>
-                  <td>Timer in minutes which when set, will count down to zero before turning off the light</td>
-                </tr>
-                <tr>
-                  <td>0x6a</td>
-                  <td>Minimum dimmer value 10-1000 (which scales the range on the physical switch)</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
+        <ul>
+          <li>
+            <a href='https://smile.amazon.com/dp/B07PJTLB7Z' target='_blank'>DS01C Touch Dimmer</a>, <a href='https://smile.amazon.com/dp/B07YKFSWJN' target='_blank'>DS02C Dimmer Switch</a>, and the <a href='https://smile.amazon.com/dp/B08R89VNMV' target='_blank'>DS02 Three-Way Dimmer Switch</a>
+            <table style='padding:10px;'>
+              <tr>
+                <th>DpID</th>
+                <th>Function</th>
+              </tr>
+              <tr>
+                <td>0x01</td>
+                <td>Toggle Light on/off</td>
+              </tr>
+              <tr>
+                <td>0x02</td>
+                <td>Brightness value 0-1000</td>
+              </tr>
+              <tr>
+                <td>0x03</td>
+                <td>Minimum dimmer value 10-1000 (which scales the range on the physical switch)</td>
+              </tr>
+              <tr>
+                <td>0x04</td>
+                <td>Dimming type used for different bulb styles</td>
+              </tr>
+              <tr>
+                <td>0x66</td>
+                <td>Timer in minutes which when set, will count down to zero before turning off the light</td>
+              </tr>
+            </table>
+          </li>
+          <li>
+            <a href='https://smile.amazon.com/dp/B086PPRWL7' target='_blank'>DS03 Dimmer & Fan Control</a>
+            <table style='padding:10px;'>
+              <tr>
+                <th>DpID</th>
+                <th>Function</th>
+              </tr>
+              <tr>
+                <td>0x01</td>
+                <td>Toggle fan on/off</td>
+              </tr>
+              <tr>
+                <td>0x03</td>
+                <td>Fan speed (0, 1, 2, or 3)</td>
+              </tr>
+              <tr>
+                <td>0x09</td>
+                <td>Toggle light on/off</td>
+              </tr>
+              <tr>
+                <td>0x0a</td>
+                <td>Brightness value (0-1000)</td>
+              </tr>
+              <tr>
+                <td>0x65</td>
+                <td>Timer in minutes which when set, will count down to zero before turning off the fan</td>
+              </tr>
+              <tr>
+                <td>0x67</td>
+                <td>Timer in minutes which when set, will count down to zero before turning off the light</td>
+              </tr>
+              <tr>
+                <td>0x6a</td>
+                <td>Minimum dimmer value 10-1000 (which scales the range on the physical switch)</td>
+              </tr>
+            </table>
+          </li>
         <p>
 When it was done, I published the code, and associated complied firmware images
 on a <a href='https://github.com/paullj1/TreatLife-HomeKit'
 target='_blank'>project GitHub</a> page, with a simple GitHub Pages branch
 hosted at <a
-href='https://paullj1.com/TreatLife-HomeKit/'>paullj1.com/TreatLife-HomeKit</a>.
+href='https://paullj1.com/TreatLife-HomeKit/' target='_blank'>paullj1.com/TreatLife-HomeKit</a>.
         </p>
       `,
       images: [
+       'treatlife.jpg'
       ]
     },
     {
@@ -233,7 +226,7 @@ sensor.
       </p>
 <h2>The User Interface</h2>
       <p>
-The UI is written using jQuery mobile and a PHP backend for database
+The original UI was written using jQuery mobile and a PHP backend for database
 interaction.  The user has the capability of changing the current set point,
 overriding the presence detection and associated programming, controlling the
 heat/cool/off mode, and forcing the fan on.  So the set points are based on
@@ -241,11 +234,20 @@ whether the house is occupied.  Well, what if you have guests over and you
 don’t want to register their phones with the system?  You can override the
 program and have it act just like a regular old thermostat. Full source can be
 found on my <a href="https://github.com/paullj1/pitherm">Github</a>.
+      </p>
+      <p>
+In a later version of the application, I re-wrote the front-end using the
+vue.js framework, and used a gun.js key-value store to do real-time pub/sub
+updates.  This allowed for a much more rich user experience that would sync
+across multiple clients in real-time.
       </p>`,
       images: [
         "pi-relay.jpg",
         "pi-wiring.jpg",
-        "pi-screen-1.png"
+        "pi-screen-1.png",
+        "pitherm-ng-sync.gif",
+        "pitherm-ng-heat.gif",
+        "pitherm-ng-cool.gif"
       ]
     },
     {
