@@ -41,23 +41,40 @@ export class ExperienceComponent implements OnInit {
 
   work_experience = [
     {
-      org: "315th Cyberspace Operations Squadron", 
-      org_link: "https://www.af.mil/",
-      location: "Fort George G. Meade, MD",
-      dates: "Aug 2019 - Present",
-      title: "Cyber Attack Operator",
+      org: "███████████████",
+      org_link: "",
+      location: "Various Locations",
+      dates: "Apr 2017 - Present",
+      title: "Journeyman Unix Operator",
       bullets: [
-        "Details of position awaiting pre-publication review",
+        'Executed hundreds of Computer Network Exploitation (CNE) ops to fulfill critical █████████████ requirements.',
+        'Advised and drove enterprise wide decisions for cyber security tools and techniques as a Unix Expert.',
+        'Trained groups of CNE operators on cutting-edge tools and methodologies.',
+        'Maintained and expanded knowledge of best practices in Advanced Persistent Threat (APT) tradecraft.',
+        'Developed, tested, and integrated tools and techniques at the cutting-edge of nation-state of CNE.',
       ]
     },
     {
-      org: "390th Cyberspace Operations Squadron", 
-      org_link: "https://www.af.mil/",
-      location: "Joint Base San Antonio, Lackland, TX",
-      dates: "Sep 2016 - Aug 2019",
+      org: "United States Cyber Command", 
+      org_link: "https://www.cybercom.mil/",
+      location: "Various Locations",
+      dates: "Sep 2016 - Present",
       title: "Cyber Attack Operator",
       bullets: [
-        "Details of position awaiting pre-publication review",
+        'Executed Offensive Cyber Operations (OCO) against adversary networks in support of National Defense priorities.',
+        'Developed, tested, and performed comprehensive OPSEC evaluation of OCO capabilities.',
+        'Oversaw and managed the training and development of a team of OCO personnel.',
+      ]
+    },
+    {
+      org: "CyDefe Labs", 
+      org_link: "https://labs.cydefe.com/",
+      location: "Remote",
+      dates: "Sep 2015 - Present",
+      title: "Chief Technology Officer",
+      bullets: [
+        'Develop and maintain virtualized cyber training infrastructure for enterprise customers.',
+        'Designed and deployed angular/go webapp for delivering training material and environment to customers.',
       ]
     },
     {
