@@ -22,6 +22,27 @@ export class ProjectsComponent implements OnInit {
 //    ]
 //  },
     {
+      title: "CyDefe Labs",
+      content: `<p>
+        I started a company with a friend of mine in 2014 in order to promote
+        better info sec training and education.  The company has evolved over
+        time, but lately, we've been focused on making custom training
+        environments.  Our current product is a custom Go back end serving a
+        reactive Angular front-end.  The back end is capable of connecting a
+        student to a virtualized or containerized (depending on how the lab is
+        configured) isolated training environment via a VNC connection over a
+        websocket.  The entire solution is accessible in a modern web browser
+        over tcp/443.  We put together a demo video to illustrate the concept.
+      </p><p style='width:80%;margin:auto'>
+        <video muted controls style='display:block;width=100%;max-width:640px;margin:auto'>
+          <source src='https://labs.cydefe.com/assets/LabsDemo.mp4' type='video/mp4'>
+          <img src='https://labs.cydefe.com/assets/logo.png' alt='CyDefe Labs'>
+        </video>
+      </p>`,
+      images: [
+      ]
+    },
+    {
       title: "TreatLife HomeKit",
       content: `<p>
 After moving to Maryland, I decided it was time to go all-in on the smart home.
