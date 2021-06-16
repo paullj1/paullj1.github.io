@@ -27,12 +27,26 @@ export class ProjectsComponent implements OnInit {
         I started a company with a friend of mine in 2014 in order to promote
         better info sec training and education.  The company has evolved over
         time, but lately, we've been focused on making custom training
-        environments.  Our current product is a custom Go back end serving a
-        reactive Angular front-end.  The back end is capable of connecting a
-        student to a virtualized or containerized (depending on how the lab is
-        configured) isolated training environment via a VNC connection over a
-        websocket.  The entire solution is accessible in a modern web browser
-        over tcp/443.  We put together a demo video to illustrate the concept.
+        environments.  Our current product is a custom Go back-end serving a
+        reactive Angular front-end.  The app is built using Docker's buildkit
+        in a four stage build.  One stage builds the static Go binary, the
+        next builds the Angular front-end, and the third builds a
+        healthchecking Go binary which runs inside the deployed container to
+        periodically poll the back-end and report to the health of the service
+        to the orchestration management solution.  The final stage
+        combines all of the production assets for deployment in the smallest
+        possible package.
+      </p><p>
+        The back-end Go binary serves all of the static angular assets as well
+        as an interface to an administrative context for viewing various
+        reports, creating and exposing new content, and managing the
+        application.  In an assessment context, the back-end, evaluate student
+        provided solutions to challenges, and exposes all of the logic and
+        means for provisioning, and connecting a student to a virtualized or
+        containerized (depending on how the lab is configured) isolated
+        training environment via a VNC connection over a websocket.  The entire
+        solution is accessible in a modern web browser over tcp/443.  We put
+        together a demo video to illustrate the concept.
       </p><p style='width:80%;margin:auto'>
         <video muted controls style='display:block;width=100%;max-width:640px;margin:auto'>
           <source src='https://labs.cydefe.com/assets/LabsDemo.mp4' type='video/mp4'>
@@ -53,7 +67,7 @@ some research on types of devices that can support HomeKit out of the box when I
 discovered the <a href='https://www.espressif.com/en/products/socs/esp8266'
 target='_blank'>ESP 8266</a>.  The MCU had been used in a wide array of cheap
 devices, and the open source community had created a few open source options for
-the hardware.  It turned out that I had unknowingly purchased a few of light
+the hardware.  It turned out that I had unknowingly purchased a few light
 switches with the hardware when I was using HomeBridge.  So I cracked them open
 and flashed them with the <a
 href='https://github.com/RavenSystem/esp-homekit-devices'
@@ -61,22 +75,34 @@ target='_blank'>HomeKit Accessory Architect (HAA)</a> firmware.
         </p>
         <p>
 Unfortunately, I had a better use-case for switches that offered dimming
-capability than simple a relay, and there wasn't a clean way to support the
-majority of smart switches on the market with HAA.  These switches typically
-used the ESP 8266 as a WiFi bridge to a smaller MCU that actually controlled the
-TRIAC dimming circuit.  They used the ESP 8266 UART interface to send and
-receive updates to the state of the light.  So I decided to use the <a
-href='https://www.treatlife.tech' target='_blank'>TreatLife</a> series of dimmer
-switches.  They were highly rated on Amazon, and all of their dimmers appeared
-to use the ESP 8266 MCU.  The ESP 8266 communicated with the secondary MCUsusing
-a <a href='https://www.tuya.com' target='_blank'>Tuya</a> protocol over UART.
-Fortunately, the <a href='https://tasmota.github.io/docs/'
-target='_blank'>Tasmota</a> project had done a decent job of documenting the
-protocol, but they didn't seem like a great place to implement HomeKit support,
-so I set out to write my own firmware.
+capability than a simple relay, and there wasn't a clean way to support the
+majority of dimming smart switches on the market with HAA.  These switches
+typically used the ESP 8266 as a WiFi bridge to a smaller MCU that actually
+controlled the TRIAC dimming circuit.  They used the ESP 8266 UART interface to
+send and receive updates to the state of the light.  So I decided to use the <a
+href='https://www.treatlife.tech' target='_blank'>TreatLife</a> series of
+dimmer switches.  They were highly rated on Amazon, and all of their dimmers
+appeared to use the ESP 8266 MCU.  The ESP 8266 communicated with the secondary
+MCUs using a proprietary <a href='https://www.tuya.com'
+target='_blank'>Tuya</a> protocol over UART.  Fortunately, the <a
+href='https://tasmota.github.io/docs/' target='_blank'>Tasmota</a> project had
+done a decent job of documenting the protocol, but they didn't seem like a
+great place to implement HomeKit support, so I set out to write my own
+firmware.
         </p>
         <p>
-Fortunately, I knew a lot of the features I wanted to support after having used Tasmota, and HAA.  I wanted the ability to do over-the-air updates, and dynamic WiFi config.  For both of those features, I started with the <a href='https://www.arduino.cc/reference/en/libraries/wifimanager/' target='_blank'>Arduino WiFi Manager</a> library, and then added the HomeKit support using the <a href='https://www.arduino.cc/reference/en/libraries/homekit-esp8266/' target='_blank'>HomeKit ESP8266</a> library.  The last thing to do was to reverse which messages controlled the various functions of the dimmer switch.  For this, I used Tasmota, and the <a href='https://github.com/sillyfrog/Tasmota-Tuya-Helper' target='_blank'>Tasmota Tuya Helper</a> bookmarklet.  The four devices the firmware my firmware supports are:
+Fortunately, I knew a lot of the features I wanted to support after having used
+Tasmota, and HAA.  I wanted the ability to do over-the-air updates, and dynamic
+WiFi config.  For both of those features, I started with the <a
+href='https://www.arduino.cc/reference/en/libraries/wifimanager/'
+target='_blank'>Arduino WiFi Manager</a> library, and then added the HomeKit
+support using the <a
+href='https://www.arduino.cc/reference/en/libraries/homekit-esp8266/'
+target='_blank'>HomeKit ESP8266</a> library.  The last thing to do was to
+reverse engineer which messages controlled the various functions of the dimmer
+switch.  For this, I used Tasmota, and the <a
+href='https://github.com/sillyfrog/Tasmota-Tuya-Helper' target='_blank'>Tasmota
+Tuya Helper</a> bookmarklet.  The four devices my firmware supports are:
         </p>
         <ul>
           <li>
