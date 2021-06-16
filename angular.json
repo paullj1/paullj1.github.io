@@ -105,7 +105,7 @@
           "options": {
             "cname": "paullj1.com",
             "baseHref": "/",
-            "repo": "git@github.com:paullj1/paullj1.github.io.git",
+            "repo": "ssh://git@github.com/paullj1/paullj1.github.io.git",
             "name": "Paul Jordan",
             "email": "paullj1@gmail.com",
             "branch": "master",
