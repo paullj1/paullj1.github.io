@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '../custom-theme.scss';
 
 .navbutton {
@@ -13,7 +14,7 @@
 }
 
 .list-item-active {
-  background-color: mat-color($mat-accent, lighter) !important;
+  background-color: mat.get-color-from-palette($mat-accent, lighter) !important;
 }
 
 .profile-pic {
@@ -32,7 +33,7 @@
 }
 .sm-links {
   font-size: 1.5em;
-  color: mat-color($mat-accent, main);
+  color: mat.get-color-from-palette($mat-accent, main);
   display: inline-block;
   padding: 1px;
 }
@@ -42,12 +43,12 @@
   margin: 0;
   font-weight: bold;
   text-align: center;
-  color: mat-color($mat-primary, lighter);
-  background-color: mat-color($mat-primary, darker);
+  color: mat.get-color-from-palette($mat-primary, lighter);
+  background-color: mat.get-color-from-palette($mat-primary, darker);
 }
 
 .theme-alternate .list-item-active {
-  background-color: mat-color($mat-accent, darker) !important;
+  background-color: mat.get-color-from-palette($mat-accent, darker) !important;
 }
 
 .nav-list {
@@ -83,11 +84,11 @@
   bottom: 0px;
   width: 100%;
   padding-top: 10px;
-  background-color: mat-color($mat-accent, lighter);
+  background-color: mat.get-color-from-palette($mat-accent, lighter);
 }
 
 .theme-alternate .dark-mode-switch {
-  background-color: mat-color($mat-accent, darker);
+  background-color: mat.get-color-from-palette($mat-accent, darker);
 }
 
 .theme-alternate .background {
