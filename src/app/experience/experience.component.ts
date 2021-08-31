@@ -58,7 +58,7 @@ export class ExperienceComponent implements OnInit {
       org: "United States Cyber Command", 
       org_link: "https://www.cybercom.mil/",
       location: "Various Locations",
-      dates: "Sep 2016 - Present",
+      dates: "Sep 2016 - August 2021",
       title: "Cyber Attack Operator",
       bullets: [
         'Executed Offensive Cyber Operations (OCO) against adversary networks in support of National Defense priorities.',
