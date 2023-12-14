@@ -70,7 +70,7 @@ export class ExperienceComponent implements OnInit {
       org: "CyDefe Labs", 
       org_link: "https://labs.cydefe.com/",
       location: "Remote",
-      dates: "Sep 2015 - Present",
+      dates: "Sep 2015 - Dec 2023",
       title: "Chief Technology Officer",
       bullets: [
         'Develop and maintain virtualized cyber training infrastructure for enterprise customers.',

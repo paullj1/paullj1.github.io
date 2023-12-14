@@ -49,8 +49,8 @@ export class ProjectsComponent implements OnInit {
         together a demo video to illustrate the concept.
       </p><p style='width:80%;margin:auto'>
         <video muted controls style='display:block;width=100%;max-width:640px;margin:auto'>
-          <source src='https://labs.cydefe.com/assets/LabsDemo.mp4' type='video/mp4'>
-          <img src='https://labs.cydefe.com/assets/logo.png' alt='CyDefe Labs'>
+          <source src='assets/files/LabsDemo.mp4' type='video/mp4'>
+          <img src='assets/img/cydefelogo.png' alt='CyDefe Labs'>
         </video>
       </p>`,
       images: [
