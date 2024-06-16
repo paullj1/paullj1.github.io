@@ -13,14 +13,13 @@ export class SkillsComponent implements OnInit {
       icon: "desktop_mac",
       color: "blue",
       bullets: [
-        "Proficiency using compiled languages including C, C++, Java, C#, Objective C, swift, Go, and Rust",
-        "Proficiency in application scripting including Python, bash, ruby",
-        "Experience using and reversing Assembly (Atmel, Xtensa, x86, x86_64, and ARM)",
-        "Experience using advanced deep learning techniques in Matlab, R, and Python",
-        "Experience training and using deep learning algorithms like RNNs/LSTMs, ANNs, SVMs, LDA/QDA",
-        "Experience using software engineering tools and methodologies including UML, Scrum, SVN, Git",
-        "Working level knowledge of User Interface frameworks like Qt and GTK+",
-        "Experience with regular expressions, parsers, compilers, database design, SQL, NoSQL",
+        "Programming Languages: Proficient in compiled languages including C, C++, Java, C#, Objective-C, Swift, Go, and Rust.",
+        "Scripting Languages: Proficient in application scripting with Python, Bash, and Ruby.",
+        "Assembly Language: Experienced in using and reversing Assembly for Atmel, Xtensa, x86, x86_64, and ARM architectures.",
+        "Deep Learning and Data Analysis: Skilled in advanced deep learning techniques using Matlab, R, and Python; proficient in training and utilizing deep learning algorithms such as RNNs/LSTMs, ANNs, SVMs, LDA/QDA.",
+        "Software Engineering Tools: Experienced with software engineering tools and methodologies including UML, Scrum, SVN, and Git.",
+        "User Interface Development: Working knowledge of UI frameworks like Qt and GTK+.",
+        "Database and Compiler Skills: Proficient with regular expressions, parsers, compilers, database design, SQL, and NoSQL databases.",
       ]
     },
     {
@@ -28,10 +27,10 @@ export class SkillsComponent implements OnInit {
       icon: "memory",
       color: "orange",
       bullets: [
-        "Proficiency building, maintaining, and deploying Docker containers for production, development, and testing",
-        "Proficiency deploying and maintaining production systems with Docker Swarm, and Portainer",
-        "Experience with CI/CD pipelines using Jenkins, and Gitlab-CI",
-        "Familiarity deploying and maintaining Kubernetes clusters",
+        "Proficient in building, maintaining, and deploying Docker containers for production, development, and testing environments.",
+        "Skilled in deploying and maintaining production systems using Docker Swarm and Portainer.",
+        "Experienced with CI/CD pipelines using Jenkins, GitLab CI, and Bamboo.",
+        "Familiar with deploying and maintaining Kubernetes clusters.",
       ]
     },
     {
@@ -39,25 +38,25 @@ export class SkillsComponent implements OnInit {
       icon: "public",
       color: "green",
       bullets: [
-        "Proficiency with web technologies including HTML5, CSS/SCSS, JavaScript/TypeScript/ES6, jQuery, extJS, XML",
-        "Experience using front-end web frameworks like angular, vueJS, ReactJS",
-        "Proficiency using backend databases such as MySQL, MongoDB, Postrgres, and sqlite",
-        "Experience with web application framework development using Django, Tornado, Flask, Ruby on Rails, Node.js",
-        "Experience using various CSS frameworks like Materialize CSS, Bootstrap",
+        "Web Technologies: Proficient with HTML5, CSS/SCSS, JavaScript/TypeScript/ES6, jQuery, extJS, and XML.",
+        "Front-End Frameworks: Experienced in using front-end web frameworks such as Angular, VueJS, and ReactJS.",
+        "Backend Databases: Proficient with MySQL, MongoDB, PostgreSQL, and SQLite.",
+        "Web Application Frameworks: Experienced in web application framework development using Django, Tornado, Flask, Ruby on Rails, and Node.js.",
+        "CSS Frameworks: Skilled in using various CSS frameworks, including Materialize CSS and Bootstrap.",
       ]
     },
     {
-      title: "Cyber Security",
+      title: "Information Security",
       icon: "security",
       color: "red",
       bullets: [
-        "Proficiency with GNU/Linux, macOS, Windows (NT 5, 6, and 10)",
-        "Experience with advanced debugging and exploit development in x86, x86_64, and ARM",
-        "Experience using advanced debugging tools like gef, peda, pwntools, immunity debugger",
-        "Familiarity with computer architecture, virtualization, reverse engineering",
-        "Experience doing packet analysis, cryptanalysis, static and behavioral malware analysis",
-        "Working knowledge of Cisco enterprise architectures, campus area network design and operation, data center design, firewalls, web proxies, IDS/IPS, networking protocols, network security strategies, cryptography",
-        "Familiarity with WAN protocols like MPLS, Frame Relay, BGP, EIGRP, OSPF",
+        "Operating Systems: Proficient with GNU/Linux, FreeBSD, macOS, and Windows.",
+        "Debugging and Exploit Development: Experienced in advanced debugging and exploit development on x86, x86_64, and aarch64 architectures.",
+        "Debugging Tools: Skilled in using advanced debugging tools such as GEF, PEDA, Pwntools, and Immunity Debugger.",
+        "Computer Architecture and Virtualization: Familiar with computer architecture, virtualization, and reverse engineering.",
+        "Malware and Packet Analysis: Experienced in packet analysis, cryptanalysis, and static and behavioral malware analysis.",
+        "Network Security: Working knowledge of Cisco enterprise architectures, campus area network design and operation, data center design, firewalls, web proxies, IDS/IPS, networking protocols, network security strategies, and cryptography.",
+        "WAN Protocols: Familiar with WAN protocols including MPLS, Frame Relay, BGP, EIGRP, and OSPF.",
       ]
     },
     {
@@ -65,9 +64,9 @@ export class SkillsComponent implements OnInit {
       icon: "blur_on",
       color: "cyan",
       bullets: [
-        "Strong leadership experience, communication and interpersonal skills",
-        "Experience teaching complex concepts and developing training scenarios and environments",
-        "Experience with classified systems, U.S. Top Secret/SCI security clearance, 14 years of Federal service",
+        "Leadership and Communication: Strong leadership experience with excellent communication and interpersonal skills.",
+        "Teaching and Training: Experienced in teaching complex concepts and developing training scenarios and environments.",
+        "Security Clearance and Federal Service: Extensive experience with classified systems; holds a U.S. Top Secret/SCI security clearance with " + ((new Date().getFullYear()) - 2006) + " years of Federal service.",
       ]
     },
     {
