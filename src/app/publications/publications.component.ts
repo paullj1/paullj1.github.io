@@ -48,23 +48,23 @@ export class PublicationsComponent implements OnInit {
         }
       ]
     },
-    {
-      title: "Magazine Articles",
-      icon: "menu_book",
-      color: "green",
-      publications: [
-        {
-          title: "Securing the Autonomous Revolution",
-          link: "https://docs.google.com/viewer?a=v&pid=sites&srcid=bWlsY3liZXIub3JnfG1hZ2F6aW5lfGd4OjZiNjg5ZDViMDcxMzY5NzQ",
-          image: "assets/img/autonomous.png",
-        },
-        {
-          title: "A Year of Developing Military Cyber Professionals in our Nation's Hearland",
-          link: "https://docs.google.com/viewer?a=v&pid=sites&srcid=bWlsY3liZXIub3JnfG1hZ2F6aW5lfGd4OjdkYjkzODE2OWExYmU1ZTU",
-          image: "assets/img/mcpa-black.png",
-        }
-      ]
-    },
+//  {
+//    title: "Magazine Articles",
+//    icon: "menu_book",
+//    color: "green",
+//    publications: [
+//      {
+//        title: "Securing the Autonomous Revolution",
+//        link: "https://docs.google.com/viewer?a=v&pid=sites&srcid=bWlsY3liZXIub3JnfG1hZ2F6aW5lfGd4OjZiNjg5ZDViMDcxMzY5NzQ",
+//        image: "assets/img/autonomous.png",
+//      },
+//      {
+//        title: "A Year of Developing Military Cyber Professionals in our Nation's Hearland",
+//        link: "https://docs.google.com/viewer?a=v&pid=sites&srcid=bWlsY3liZXIub3JnfG1hZ2F6aW5lfGd4OjdkYjkzODE2OWExYmU1ZTU",
+//        image: "assets/img/mcpa-black.png",
+//      }
+//    ]
+//  },
     
   ]
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 export interface ImagePopupSource {
   src: string;
@@ -13,6 +14,7 @@ export interface ImagePopupSource {
 })
 export class ProjectsComponent implements OnInit {
 
+  projectIndex = 0;
   projects = [
 //  {
 //    title: "RaspbabyPiCam",
@@ -23,41 +25,32 @@ export class ProjectsComponent implements OnInit {
 //  },
     {
       title: "CyDefe Labs",
+      id: "cydefe",
       content: `<p>
-        I started a company with a friend of mine in 2014 in order to promote
-        better info sec training and education.  The company has evolved over
-        time, but lately, we've been focused on making custom training
-        environments.  Our current product is a custom Go back-end serving a
-        reactive Angular front-end.  The app is built using Docker's buildkit
-        in a four stage build.  One stage builds the static Go binary, the
-        next builds the Angular front-end, and the third builds a
-        healthchecking Go binary which runs inside the deployed container to
-        periodically poll the back-end and report to the health of the service
-        to the orchestration management solution.  The final stage
-        combines all of the production assets for deployment in the smallest
-        possible package.
-      </p><p>
-        The back-end Go binary serves all of the static angular assets as well
-        as an interface to an administrative context for viewing various
-        reports, creating and exposing new content, and managing the
-        application.  In an assessment context, the back-end, evaluate student
-        provided solutions to challenges, and exposes all of the logic and
-        means for provisioning, and connecting a student to a virtualized or
-        containerized (depending on how the lab is configured) isolated
-        training environment via a VNC connection over a websocket.  The entire
-        solution is accessible in a modern web browser over tcp/443.  We put
-        together a demo video to illustrate the concept.
+        In 2014, I co-founded a company with a colleague to enhance information security training and education. Over the years, our company evolved, and we are currently focused on developing custom training environments. Our latest product features a custom Go back-end that powers a reactive Angular front-end. The application is built using Docker's BuildKit in a four-stage build process:
+        </p>
+        <ol>
+        <li><b>Static Go Binary</b>: The first stage builds the static Go binary.</li>
+        <li><b>Angular Front-End</b>: The second stage compiles the Angular front-end.</li>
+        <li><b>Health-Checking Go Binary</b>: The third stage constructs a health-checking Go binary that runs within the deployed container, periodically polling the back-end and reporting the service's health to the orchestration management solution.</li>
+        <li><b>Production Assets</b>: The final stage combines all production assets for deployment in the smallest possible package.</li>
+        </ol>
+        <p>
+        The back-end Go binary not only serves all static Angular assets but also provides an administrative interface for viewing reports, creating and managing content, and overseeing the application. In an assessment context, the back-end evaluates student-submitted solutions to challenges and manages the provisioning and connection of students to isolated training environments. These environments can be virtualized or containerized (depending on the lab configuration) and are accessible via a VNC connection over a WebSocket. The entire solution operates in a modern web browser over TCP/443.
+        </p><p>
+      We have created a demonstration video to illustrate the concept:
       </p><p style='width:80%;margin:auto'>
         <video muted controls style='display:block;width=100%;max-width:640px;margin:auto'>
           <source src='assets/files/LabsDemo.mp4' type='video/mp4'>
           <img src='assets/img/cydefelogo.png' alt='CyDefe Labs'>
         </video>
-      </p>`,
+      </p><br />`,
       images: [
       ]
     },
     {
       title: "TreatLife HomeKit",
+      id: "treatlife",
       content: `<p>
 After moving to Maryland, I decided it was time to go all-in on the smart home.
 I had previously played around with using <a href='https://homebridge.io'
@@ -186,6 +179,7 @@ href='https://paullj1.com/TreatLife-HomeKit/' target='_blank'>paullj1.com/TreatL
     },
     {
       title: "HackTheArch",
+      id: "hackthearch",
       content: `<p>
 Following the success of the CTF the St. Louis chapter of the MCPA had put on
 in the Summer of 2015, we decided that we would make it a recurring event.
@@ -221,6 +215,7 @@ href="https://hackthearch.herokuapp.com">https://hackthearch.herokuapp.com</a>.
     },
     {
       title: "Global Hack IV",
+      id: "globalhack",
       content: `<p>
 On June 7th 2015, I along with two friends developed an app for the social
 networking site lockerdome.com for GlobalhackIV and placed second out of thirty
@@ -249,6 +244,7 @@ had to be chosen so the game knew which slide to load when the timer ran out.
     },
     {
       title: "PiTherm",
+      id: "pitherm",
       content:`<p>
 This was my first real Raspberry Pi project.  One day I realized just how
 simple thermostats were.  The one we had in our house was too simple and only
@@ -300,6 +296,7 @@ across multiple clients in real-time.
     },
     {
       title: "MyPersonalBudget",
+      id: "budget",
       content: `<p>
 Shortly after moving to Scott AFB, my wife and I realized a need for a
 convenient way to track our spending.  I wanted an asynchronous way for us to
@@ -324,6 +321,7 @@ href='https://budget.paullj1.com/' target='_blank'>budget.paullj1.com</a>.
     },
     {
       title: "TTOCUI",
+      id: "ttocui",
       content: `<p>
 TTOCUI is a cross-platform user interface for a tire uniformity machine that I
 wrote while working for CTI.  TTOC was a controller for a machine that would
@@ -366,6 +364,7 @@ video is better:
     },
     {
       title: "WorkoutBuddy",
+      id: "workoutbuddy",
       content: `<p>
 Workout Buddy was my senior design project in college.  I used it as an
 opportunity to learn Objective-C and iOS development.  Workout Buddy was a diet
@@ -388,7 +387,9 @@ the report I wrote on the app.
 
   constructor(
     public popup: MatDialog,
-    public sanitizer: DomSanitizer) { }
+    public sanitizer: DomSanitizer,
+    private route: ActivatedRoute) { }
+
 
   bypass(text) {
     return this.sanitizer.bypassSecurityTrustHtml(text);
@@ -403,6 +404,19 @@ the report I wrote on the app.
   }
 
   ngOnInit(): void {
+ 
+    this.route.queryParams.subscribe(params => {
+      const qmap = new Map(Object.entries(params));
+
+      let tabid = this.projects.map((e) => {
+        return e.id;
+      }).indexOf(qmap.get('id'));
+
+      if (tabid) {
+        this.projectIndex = tabid;
+      }
+    });
+
   }
 
 }

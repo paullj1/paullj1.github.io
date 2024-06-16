@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-experience',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
+  }
+
+  bypass(text) {
+    return this.sanitizer.bypassSecurityTrustHtml(text);
   }
 
   education = [
@@ -67,14 +72,24 @@ export class ExperienceComponent implements OnInit {
       ]
     },
     {
+      org: "175th Cyberspace Operations Squadron",
+      location: "Fort George G. Meade, MD",
+      dates: "Aug 2022 - Present",
+      title: "Director of Operations (Part-Time)",
+      bullets: [
+        'Designed and implemented bespoke cyber readiness exercise using a commercial training environment, earning outstanding feedback from higher headquarters.',
+        'Led implementation of useful readiness training for cyber operators, developers, and analysts.'
+      ]
+    },
+    {
       org: "CyDefe Labs", 
-      org_link: "https://labs.cydefe.com/",
+      org_link: "/projects?id=cydefe",
       location: "Remote",
       dates: "Sep 2015 - Dec 2023",
       title: "Chief Technology Officer",
       bullets: [
-        'Develop and maintain virtualized cyber training infrastructure for enterprise customers.',
-        'Designed and deployed angular/go webapp for delivering training material and environment to customers.',
+        'Developed and maintained virtualized training infrastructure for enterprise customers.',
+        'Designed and deployed full-stack webapp for delivering training material and environments to customers.',
       ]
     },
     {
@@ -109,10 +124,10 @@ export class ExperienceComponent implements OnInit {
       dates: "May 2011 - Jul 2012",
       title: "Software Engineer",
       bullets: [
-        "Independently developed cross-platform UI called TTOCUI currently deployed worldwide using GTK+ framework",
-        "Maintained and developed PHP/JavaScript web application written using the extJS framework",
-        "Maintained and developed a data acquisition application in C",
-        "Maintained and developed a data warehousing business intelligence application",
+        "Independently developed and deployed cross-platform GTK+ <a href='/projects?id=ttocui'>tire testing UI</a>",
+        "Maintained and developed PHP/JavaScript extJS web app",
+        "Maintained and developed data acquisition application in C",
+        "Maintained and developed data warehousing business intelligence application",
       ]
     },
     {
@@ -122,7 +137,7 @@ export class ExperienceComponent implements OnInit {
       dates: "Aug 2004 - May 2011",
       title: "System Administrator",
       bullets: [
-        "Managed and maintained Microsoft Server 2000, 2007, Microsoft Exchange Server 2007, and the Active Directory server",
+        "Managed and maintained Microsoft Server 2000, 2007, Microsoft Exchange Server 2007, and Active Directory server",
         "Managed, serviced, and maintained twenty-three client computers on-site, and twenty remote clients",
         "Provided technical support for forty-three users",
       ]

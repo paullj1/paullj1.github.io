@@ -40,14 +40,16 @@
                 href="{{work.org_link}}">
               {{work.org}},
             </a>
-            <ng-template #noLink>{{work.org}}</ng-template>
+            <ng-template #noLink>{{work.org}},</ng-template>
             {{work.location}}
             ({{work.dates}});
             {{work.title}}
           </span>
         </b>
         <ul>
-          <li *ngFor="let bullet of work.bullets">{{bullet}}</li>
+          <li *ngFor="let bullet of work.bullets">
+            <span [innerHTML]="this.bypass(bullet)"></span>
+          </li>
         </ul>
       </div>
       <div>
