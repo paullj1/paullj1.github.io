@@ -1,0 +1,63 @@
+// Theme variables for use in component SCSS files
+// This file only contains variable definitions without any actual styles
+
+@use '@angular/material' as mat;
+
+// Foreground Elements - Light Theme Text
+$dark-text: #000000;
+$dark-primary-text: rgba($dark-text, 0.87);
+$dark-accent-text: rgba(rgba(black, 0.87), 0.54);
+$dark-disabled-text: rgba(rgba(black, 0.87), 0.38);
+$dark-dividers: rgba(rgba(black, 0.87), 0.12);
+$dark-focused: rgba(rgba(black, 0.87), 0.12);
+
+// Dark Theme text
+$light-text: #ffffff;
+$light-primary-text: $light-text;
+$light-accent-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+// Background config
+$light-background: #fafafa;
+$dark-background: #2c2c2c;
+
+// Primary palette
+$mat-primary: (
+  main: #39258f,
+  lighter: #c4bedd,
+  darker: #241672,
+  200: #39258f,
+  contrast : (
+    main: white,
+    lighter: rgba(black, 0.87),
+    darker: white,
+  )
+);
+
+// Accent palette
+$mat-accent: (
+  main: #797979,
+  lighter: #d7d7d7,
+  darker: #5c5c5c,
+  200: #797979,
+  contrast : (
+    main: white,
+    lighter: rgba(black, 0.87),
+    darker: white,
+  )
+);
+
+// Warn palette
+$mat-warn: (
+  main: #ff0000,
+  lighter: #ffb3b3,
+  darker: #ff0000,
+  200: #ff0000,
+  contrast : (
+    main: white,
+    lighter: rgba(black, 0.87),
+    darker: white,
+  )
+);
